@@ -8,10 +8,14 @@ function Provider({ children }) {
   const [perIR, setPerIR] = useState('0%');
   const [INSS, setINSS] = useState(0);
   const [perINSS, setPerINSS] = useState('0%');
-  const [descontos, setDescontos] = useState(0); 
+  const [descontos, setDescontos] = useState(0);
+  const [enableResults, setEnableResults] = useState(false);
+  const [horas, setHoras] = useState(0);
+  const [dias, setDias] = useState(0);
+  const [ganhoHora, setGanhoHora] = useState(0);
+  const [ganhoDia, setGanhoDia] = useState(0);
 
   const context = {
-
     salarioBruto,
     setSalarioBruto,
     salarioLiquido,
@@ -29,6 +33,19 @@ function Provider({ children }) {
 
     descontos,
     setDescontos,
+
+    enableResults,
+    setEnableResults,
+
+    horas,
+    setHoras,
+    ganhoHora,
+    setGanhoHora,
+
+    dias,
+    setDias,
+    ganhoDia,
+    setGanhoDia,
 
   };
 

@@ -1,12 +1,16 @@
 import React from 'react';
+import ButtonQuantoGanho from '../components/ButtonQuantoGanho';
 import DataSalary from '../components/DataSalary';
-import Results from '../components/Results';
+import ResultsDiscounts from '../components/ResultsDiscounts';
+import ResultsHours from '../components/ResultsHours';
 
 function Home() {
   return(
-    <main>
+    <main className="main-container">
       <DataSalary />
-      <Results />
+      <ButtonQuantoGanho />
+      <ResultsDiscounts />
+      <ResultsHours />
     </main>
   );
 }
