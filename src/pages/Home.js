@@ -9,8 +9,10 @@ function Home() {
     <main className="main-container">
       <DataSalary />
       <ButtonQuantoGanho />
-      <ResultsDiscounts />
-      <ResultsHours />
+      <div className="results-container">
+        <ResultsDiscounts />
+        <ResultsHours />
+      </div>
     </main>
   );
 }

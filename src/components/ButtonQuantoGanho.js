@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../context';
 import Button from 'react-bootstrap/Button';
+import '../css/ButtonQuantoGanho.css';
 
 function ButtonQuantoGanho() {
   const 
@@ -17,6 +18,8 @@ function ButtonQuantoGanho() {
     dias,
     setGanhoDia,
     setGanhoHora,
+    setGanhoDiaMes,
+    setSalarioAnual,
   } = useContext(Context);
 
   const horasDiasGanho = (salario) => {
@@ -24,6 +27,10 @@ function ButtonQuantoGanho() {
     setGanhoDia(salarioDia);
     let salarioHora = Math.round((salarioDia/horas) * 100) / 100;
     setGanhoHora(salarioHora);
+    let diaMes = Math.round((salario / 30) * 100) / 100;
+    setGanhoDiaMes(diaMes);
+    let salarioAno = Math.round((salario * 13.33) * 100) / 100;
+    setSalarioAnual(salarioAno);
   };
 
   const descontoIRRF = (descInss) => {

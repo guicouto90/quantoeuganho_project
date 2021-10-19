@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../context';
 import Inputs from './DataSalaryComponents/Inputs';
-
+import '../css/DataSalary.css';
 
 function DataSalary() {
   const { 
@@ -24,9 +24,9 @@ function DataSalary() {
 
   return(
     <section>
-      <header>
+      <div className="header">
         <h1>AFINAL, QUANTO EU GANHO?</h1>
-      </header>
+      </div>
         <div className="container-inputs">
           <div id="salario-bruto">
             <Inputs
@@ -43,6 +43,7 @@ function DataSalary() {
               title={'Digite as horas trabalhadas por dia: '}
               type={'number'}
               onChange={ handleOnChangeHoras }
+              maxLength={ 24 }
             />
           </div>
           <div id="dias-mes">
@@ -51,6 +52,7 @@ function DataSalary() {
               title={'Digite os dias trabalhados por mês: '}
               type={'number'}
               onChange={ handleOnChangeDias }
+              maxLength={ 31 }
             />
           </div>
         </div>

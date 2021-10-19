@@ -14,12 +14,16 @@ function Provider({ children }) {
   const [dias, setDias] = useState(0);
   const [ganhoHora, setGanhoHora] = useState(0);
   const [ganhoDia, setGanhoDia] = useState(0);
+  const [ganhoDiaMes, setGanhoDiaMes] = useState(0);
+  const [salarioAnual, setSalarioAnual] = useState(0);
 
   const context = {
     salarioBruto,
     setSalarioBruto,
     salarioLiquido,
     setSalarioLiquido,
+    salarioAnual,
+    setSalarioAnual,
 
     IRRF, 
     setIRRF,
@@ -46,6 +50,8 @@ function Provider({ children }) {
     setDias,
     ganhoDia,
     setGanhoDia,
+    ganhoDiaMes,
+    setGanhoDiaMes,
 
   };
 

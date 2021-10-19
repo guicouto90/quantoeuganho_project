@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Inputs({ title, id, type, onChange, placeholder }) {
+function Inputs({ title, id, type, onChange, placeholder, maxLength }) {
 
   return(
     <label htmlFor={ id }>
@@ -10,6 +10,7 @@ function Inputs({ title, id, type, onChange, placeholder }) {
         id={ id }
         placeholder={ placeholder }
         onChange={ onChange }
+        maxLength={ maxLength }
       />
     </label>
   );

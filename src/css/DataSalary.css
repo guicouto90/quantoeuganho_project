@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  background-color: rgb(50, 167, 145);
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 450px;
+  margin-left: 400px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#salario-bruto, #horas-dia, #dias-mes {
+  padding: 5px 12px 1px 15px;
+}

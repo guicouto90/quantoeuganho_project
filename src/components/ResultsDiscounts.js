@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Context from '../context';
+import '../css/ResultsDiscounts.css';
 
 function ResultsDiscounts() {
   const 
@@ -8,7 +9,7 @@ function ResultsDiscounts() {
     perIR, 
     INSS, 
     perINSS, 
-    salarioLiquido, 
+    salarioLiquido,
     descontos,
     enableResults,
   } = useContext(Context);
@@ -18,6 +19,7 @@ function ResultsDiscounts() {
   } else {
     return(
       <section className="container-results-discounts">
+        <h2>Descontos</h2>
         <div>
           <span>Desconto IRRF: {IRRF === 'Isento' ? IRRF : `R$${IRRF}`}</span>
         </div>
@@ -34,7 +36,7 @@ function ResultsDiscounts() {
           <span>Total de descontos: {`R$${ descontos }`}</span>
         </div>
         <div>
-          <span>Salário líquido: {`R$${salarioLiquido}`}</span>
+          <span>Salário liquido por mês: {`R$${salarioLiquido}`}</span>
         </div>
       </section>
     );
