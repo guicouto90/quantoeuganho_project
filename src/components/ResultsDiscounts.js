@@ -20,24 +20,32 @@ function ResultsDiscounts() {
     return(
       <section className="container-results-discounts">
         <h2>Descontos</h2>
-        <div>
-          <span>Desconto IRRF: {IRRF === 'Isento' ? IRRF : `R$${IRRF}`}</span>
-        </div>
-        <div>
-          <span>Aliquota IRRF: {perIR}</span>
-        </div>
-        <div>
-          <span>Desconto INSS: R${INSS}</span>
-        </div>
-        <div>
-          <span>Alíquota INSS: {perINSS}</span>
-        </div>
-        <div>
-          <span>Total de descontos: {`R$${ descontos }`}</span>
-        </div>
-        <div>
-          <span>Salário liquido por mês: {`R$${salarioLiquido}`}</span>
-        </div>
+        <table>
+          <tr>
+            <th>Desconto IRRF:</th>
+            <tb>{IRRF === 'Isento' ? IRRF : `R$${IRRF}`}</tb>
+          </tr>
+          <tr>
+            <th>Aliquota IRRF:</th>
+            <tb>{perIR}</tb>
+          </tr>
+          <tr>
+            <th>Desconto INSS: </th>
+            <tb>{`R$${INSS}`}</tb>
+          </tr>
+          <tr>
+            <th>Alíquota INSS:</th>
+            <tb>{perINSS}</tb>
+          </tr>
+          <tr>
+            <th>Total de descontos:</th>
+            <tb>{`R$${ descontos }`}</tb>
+          </tr>
+          <tr>
+            <th>Salário liquido por mês: </th>
+            <tb>{`R$${salarioLiquido}`}</tb>
+          </tr>
+        </table>
       </section>
     );
   }

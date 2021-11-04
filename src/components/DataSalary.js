@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Context from '../context';
 import Inputs from './DataSalaryComponents/Inputs';
 import '../css/DataSalary.css';
@@ -7,11 +7,18 @@ function DataSalary() {
   const { 
     setSalarioBruto,
     setDias,
-    setHoras,  
+    setHoras,
+    salarioBruto,
+    dias,
+    horas,
+    setDisabledButton,
   } = useContext(Context);
 
   const handleOnChangeSalarioBruto = ( { target: { value } } ) => {
+    let teste = value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    console.log(teste);
     setSalarioBruto(Number(value));
+    
   };
 
   const handleOnChangeHoras = ( { target: { value } } ) => {
@@ -22,11 +29,23 @@ function DataSalary() {
     setDias(Number(value));
   };
 
+  useEffect(() => {
+    const enableButton = () => {
+      if(salarioBruto > 0 && dias > 0 && horas > 0) {
+        setDisabledButton(false);
+      } else {
+        setDisabledButton(true);
+      }
+    };
+    enableButton();
+  })
+
   return(
     <section>
       <div className="header">
         <h1>AFINAL, QUANTO EU GANHO?</h1>
       </div>
+      <div className="main-container-inputs">
         <div className="container-inputs">
           <div id="salario-bruto">
             <Inputs
@@ -56,6 +75,7 @@ function DataSalary() {
             />
           </div>
         </div>
+      </div>
     </section>
   );
 }

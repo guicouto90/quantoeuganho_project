@@ -18,18 +18,24 @@ function ResultsHours() {
     return(
       <section className="container-results-hours">
         <h2>Contabilização em tempo</h2>
-        <div>
-          <span>Ganho liquido por hora trabalhada: {`R$${ganhoHora}`}</span>
-        </div>
-        <div>
-          <span>Ganho liquido por dia trabalhado: {`R$${ganhoDia}`}</span>
-        </div>
-        <div>
-          <span>Salário liquido dividido por 30 dias no mês: {`R$${ ganhoDiaMes }`}</span>
-        </div>
-        <div>
-          <span>Salário liquido anual com 13 e 1/3 férias: {`R$${salarioAnual}`}</span>
-        </div>
+        <table>
+          <tr>
+            <th>Ganho liquido por hora trabalhada:</th>
+            <tb>{`R$${ganhoHora}`}</tb>
+          </tr>
+          <tr>
+            <th>Ganho liquido por dia trabalhado:</th>
+            <tb>{`R$${ganhoDia}`}</tb>
+          </tr>
+          <tr>
+            <th>Salário liquido dividido por 30 dias no mês: </th>
+            <tb>{`R$${ ganhoDiaMes }`}</tb>
+          </tr>
+          <tr>
+            <th>Salário liquido anual com 13 e 1/3 férias:</th>
+            <tb>{`R$${salarioAnual}`}</tb>
+          </tr>
+        </table>
       </section>
     );
   }

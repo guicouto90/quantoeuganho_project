@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Context from '.';
+import fetchCurrencies from '../services/fetchCurrencies'
 
 function Provider({ children }) {
   const [salarioBruto, setSalarioBruto] = useState(0);
@@ -16,6 +17,28 @@ function Provider({ children }) {
   const [ganhoDia, setGanhoDia] = useState(0);
   const [ganhoDiaMes, setGanhoDiaMes] = useState(0);
   const [salarioAnual, setSalarioAnual] = useState(0);
+  const [hoursJapones, setHoursJapones] = useState(0);
+  const [hoursIphone, setHoursIphone] = useState(0);
+  const [hoursTanque, setHoursTanque] = useState(0);
+  const [hoursCarro, setHoursCarro] = useState(0);
+  const [hoursImovel, setHoursImovel] = useState(0);
+  const [currencies, setCurrencies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [salarioAnualUSD, setSalarioAnualUSD] = useState(0);
+  const [salarioLiquidoUSD, setSalarioLiquidoUSD] = useState(0);
+  const [ganhoDiaMesUSD, setGanhoDiaMesUSD] = useState(0);
+  const [ganhoDiaUSD, setGanhoDiaUSD] = useState(0);
+  const [ganhoHoraUSD, setGanhoHoraUSD] = useState(0);
+  const [disabledButton, setDisabledButton] = useState(true);
+
+  useEffect(() => {
+    const getCurrencies = async () => {
+      const results = await fetchCurrencies();
+      setCurrencies(results.USD.ask);
+      setIsLoading(false);
+    };
+    getCurrencies();
+  },[]);
 
   const context = {
     salarioBruto,
@@ -53,6 +76,32 @@ function Provider({ children }) {
     ganhoDiaMes,
     setGanhoDiaMes,
 
+    hoursJapones,
+    hoursTanque, 
+    hoursIphone,
+    hoursCarro,
+    hoursImovel,
+    setHoursJapones,
+    setHoursTanque,
+    setHoursIphone,
+    setHoursCarro,
+    setHoursImovel,
+
+    currencies,
+    isLoading,
+
+    salarioAnualUSD, 
+    setSalarioAnualUSD,
+    salarioLiquidoUSD, 
+    setSalarioLiquidoUSD,
+    ganhoDiaMesUSD, 
+    setGanhoDiaMesUSD, 
+    ganhoDiaUSD, 
+    setGanhoDiaUSD, 
+    ganhoHoraUSD, 
+    setGanhoHoraUSD,
+    setDisabledButton,
+    disabledButton,
   };
 
   return(
