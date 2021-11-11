@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Inputs({ title, id, type, onChange, placeholder, maxLength }) {
+function Inputs({ title, id, type, placeholder, maxLength, required, setValue }) {
+
+  const handleOnChange = ({ target: { value } } ) => {
+    setValue(Number(value))
+  }
 
   return(
     <label htmlFor={ id }>
@@ -9,8 +13,9 @@ function Inputs({ title, id, type, onChange, placeholder, maxLength }) {
         type={ type }
         id={ id }
         placeholder={ placeholder }
-        onChange={ onChange }
+        onChange={ handleOnChange }
         maxLength={ maxLength }
+        required={ required }
       />
     </label>
   );

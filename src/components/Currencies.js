@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Context from '../context';
 import '../css/WorkedHours.css';
 
@@ -10,8 +10,34 @@ function Currencies() {
     ganhoDiaMesUSD, 
     ganhoDiaUSD, 
     ganhoHoraUSD, 
+    setGanhoHoraUSD,
+    setGanhoDiaUSD,
+    setSalarioLiquidoUSD,
+    setSalarioAnualUSD,
+    setGanhoDiaMesUSD,
+    ganhoHora,
+    ganhoDia,
+    ganhoDiaMes,
+    salarioLiquido,
+    salarioAnual,
+    currencies,
+  } = useContext(Context);
 
-   } = useContext(Context);
+  useEffect(() => {
+    const salaryInUSD = (hora, dia, mes, ano, diaMes ) => {
+      let horaUSD = Math.round((hora / currencies) * 100) / 100;
+      setGanhoHoraUSD(horaUSD);
+      let diaUSD = Math.round((dia / currencies) * 100) / 100;
+      setGanhoDiaUSD(diaUSD);
+      let mesUSD = Math.round((mes / currencies) * 100) / 100;
+      setSalarioLiquidoUSD(mesUSD);
+      let anoUSD = Math.round((ano / currencies) * 100) / 100;
+      setSalarioAnualUSD(anoUSD);
+      let diaMesUSD = Math.round((diaMes / currencies) * 100) / 100;
+      setGanhoDiaMesUSD(diaMesUSD);
+    };
+    salaryInUSD(ganhoHora, ganhoDia, salarioLiquido, salarioAnual, ganhoDiaMes);
+  }, []);
 
   if(enableResults === false) {
     return '';
