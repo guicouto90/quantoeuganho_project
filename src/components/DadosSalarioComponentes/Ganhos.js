@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Context from '../../context';
 import Inputs from './Inputs'
 
-function Earnings() {
+function Ganhos() {
 
   const {
     setSalarioBruto,
@@ -209,4 +209,4 @@ function Earnings() {
   );
 };
 
-export default Earnings;
+export default Ganhos;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Context from '../../context';
 import Inputs from './Inputs'
 
-function Time() {
+function Tempo() {
   const {
     setDias,
     setHoras,
@@ -33,4 +33,4 @@ function Time() {
   );
 };
 
-export default Time;
+export default Tempo;

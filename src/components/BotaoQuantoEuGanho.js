@@ -3,7 +3,7 @@ import Context from '../context';
 import Button from 'react-bootstrap/Button';
 import '../css/ButtonQuantoGanho.css';
 
-function ButtonQuantoGanho({history}) {
+function BotaoQuantoEuGanho({history}) {
   const 
   { 
     salarioBruto, 
@@ -21,6 +21,7 @@ function ButtonQuantoGanho({history}) {
     setGanhoDiaMes,
     setSalarioAnual,
     disabledButton,
+    setSalarioAno12,
   } = useContext(Context);
 
   const horasDiasGanho = (salario) => {
@@ -30,6 +31,9 @@ function ButtonQuantoGanho({history}) {
     setGanhoHora(salarioHora);
     let diaMes = Math.round((salario / 30) * 100) / 100;
     setGanhoDiaMes(diaMes);
+    let salario12 = Math.round((salario * 12) *100 / 100);
+    salario12 = salario12.toFixed(2);
+    setSalarioAno12(salario12);
     let salarioAno = Math.round((salario * 13.33) * 100) / 100;
     setSalarioAnual(salarioAno);
   };
@@ -139,8 +143,7 @@ function ButtonQuantoGanho({history}) {
   const handleOnClick = () => {
     descontoINSS();
     setEnableResults(true);
-    history.push('/salary-details')
-
+    history.push('/salary-details');
   };
 
   return(
@@ -156,4 +159,4 @@ function ButtonQuantoGanho({history}) {
   );
 }
 
-export default ButtonQuantoGanho;
+export default BotaoQuantoEuGanho;

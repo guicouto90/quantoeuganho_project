@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Context from '../context';
 import '../css/ResultsDiscounts.css';
 
-function ResultsDiscounts() {
+function Descontos() {
   const 
   { 
     IRRF, 
@@ -23,7 +23,7 @@ function ResultsDiscounts() {
         <table>
           <tr>
             <th>Desconto IRRF:</th>
-            <tb>{IRRF === 'Isento' ? IRRF : `R$${IRRF}`}</tb>
+            <tb>{IRRF === 'Isento' ? IRRF : `R$${IRRF.toFixed(2)}`}</tb>
           </tr>
           <tr>
             <th>Aliquota IRRF:</th>
@@ -31,7 +31,7 @@ function ResultsDiscounts() {
           </tr>
           <tr>
             <th>Desconto INSS: </th>
-            <tb>{`R$${INSS}`}</tb>
+            <tb>{`R$${INSS.toFixed(2)}`}</tb>
           </tr>
           <tr>
             <th>Alíquota INSS:</th>
@@ -39,11 +39,11 @@ function ResultsDiscounts() {
           </tr>
           <tr>
             <th>Total de descontos:</th>
-            <tb>{`R$${ descontos }`}</tb>
+            <tb>{`R$${ descontos.toFixed(2) }`}</tb>
           </tr>
           <tr>
             <th>Salário liquido por mês: </th>
-            <tb>{`R$${salarioLiquido}`}</tb>
+            <tb>{`R$${salarioLiquido.toFixed(2)}`}</tb>
           </tr>
         </table>
       </section>
@@ -53,4 +53,4 @@ function ResultsDiscounts() {
   
 }
 
-export default ResultsDiscounts;
+export default Descontos;

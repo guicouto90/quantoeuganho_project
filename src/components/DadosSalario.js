@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import Context from '../context';
 import '../css/DataSalary.css';
-import Time from './DataSalaryComponents/Time';
-import Earnings from './DataSalaryComponents/Earnings';
+import Tempo from './DadosSalarioComponentes/Tempo';
+import Ganhos from './DadosSalarioComponentes/Ganhos';
 
-function DataSalary() {
+function DadosSalario() {
   const { 
     salarioBruto,
     dias,
@@ -30,12 +30,12 @@ function DataSalary() {
       </div>
       <div className="main-container-inputs">
         <div className="container-inputs">
-          <Earnings />
-          <Time />
+          <Ganhos />
+          <Tempo />
         </div>
       </div>
     </section>
   );
 }
 
-export default DataSalary;
+export default DadosSalario;

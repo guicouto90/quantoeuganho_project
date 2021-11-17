@@ -1,13 +1,13 @@
 import React from 'react';
-import ButtonQuantoGanho from '../components/ButtonQuantoGanho';
-import DataSalary from '../components/DataSalary';
+import BotaoQuantoEuGanho from '../components/BotaoQuantoEuGanho';
+import DadosSalario from '../components/DadosSalario';
 
 
 function Home(props) {
   return(
     <main className="main-container">
-      <DataSalary />
-      <ButtonQuantoGanho history={ props.history } />
+      <DadosSalario />
+      <BotaoQuantoEuGanho history={ props.history } />
     </main>
   );
 }

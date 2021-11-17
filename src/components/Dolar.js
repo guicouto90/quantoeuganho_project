@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Context from '../context';
 import '../css/WorkedHours.css';
 
-function Currencies() {
+function Dolar() {
   const { 
     salarioLiquidoUSD, 
     enableResults, 
@@ -48,23 +48,23 @@ function Currencies() {
         <table>
           <tr>
             <th>Ganho liquido por hora trabalhado em USD:</th>
-            <tb>{ganhoHoraUSD} $USD</tb>
+            <tb>{ganhoHoraUSD.toFixed(2)} $USD</tb>
           </tr>
           <tr>
           <th>Ganho liquido por dia trabalhado em USD: </th>
-            <tb>{ganhoDiaUSD} $USD</tb>
+            <tb>{ganhoDiaUSD.toFixed(2)} $USD</tb>
           </tr>
           <tr>
             <th>Salário liquido por mês em USD: </th>
-            <tb>{salarioLiquidoUSD} $USD</tb>
+            <tb>{salarioLiquidoUSD.toFixed(2)} $USD</tb>
           </tr>
           <tr>
             <th>Salário liquido dividido por 30 dias no mês em USD:</th>
-            <tb>{ganhoDiaMesUSD} $USD</tb>
+            <tb>{ganhoDiaMesUSD.toFixed(2)} $USD</tb>
           </tr>
           <tr>
             <th>Salário liquido anual com 13 e 1/3 férias em USD: </th>
-            <tb>{salarioAnualUSD} $USD</tb>
+            <tb>{salarioAnualUSD.toFixed(2)} $USD</tb>
           </tr>
         </table>
       </section>
@@ -72,4 +72,4 @@ function Currencies() {
   }
 }
 
-export default Currencies;
+export default Dolar;

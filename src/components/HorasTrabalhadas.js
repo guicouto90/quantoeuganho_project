@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Context from '../context';
 import '../css/WorkedHours.css';
 
-function WorkedHours() {
+function HorasTrabalhadas() {
   const 
   { 
     hoursJapones,
@@ -83,4 +83,4 @@ function WorkedHours() {
   }
 }
 
-export default WorkedHours;
+export default HorasTrabalhadas;
