@@ -14,15 +14,18 @@ function DetalhesSalario() {
       <div className="results-container">
         <DadosDigitados />
         <Descontos />
+        <Resultados />
       </div>
       <div className="results-container">
-        
+       
       </div>
       <div className="results-container">        
-        <Resultados />
+        
       </div>
       <div className="hours-container">
         <HorasTrabalhadas />
+      </div>
+      <div className="hours-container">
         <Dolar />
       </div>
     </main>

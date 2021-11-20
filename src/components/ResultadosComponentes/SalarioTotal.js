@@ -37,7 +37,7 @@ function SalarioTotal() {
   }, []);
 
   return(
-    <section>
+    <section className="salario-total">
       <h5>Salário líquido + 13 + 1/3 férias + PLR + Comissões</h5>
       <table>
         <tr>

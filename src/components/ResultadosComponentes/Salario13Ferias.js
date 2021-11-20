@@ -32,7 +32,7 @@ function Salario13Ferias() {
   }, []);
 
   return(
-    <section>
+    <section className="salario-13-ferias">
       <h5>Salário líquido + 13 + 1/3 férias</h5>
       <table>  
         <tr>

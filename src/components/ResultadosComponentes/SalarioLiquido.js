@@ -11,7 +11,7 @@ function SalarioLiquido() {
   } = useContext(Context);
   
   return(
-    <section>
+    <section className="salario-liquido">
       <h5>SOMENTE o salário líquido</h5>
       <table>
         <tr>

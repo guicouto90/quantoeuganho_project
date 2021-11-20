@@ -28,7 +28,7 @@ function Beneficios() {
   }, [])
 
   return(
-    <section>
+    <section className="beneficios">
       <h4>Contabilização dos beneficios</h4>
       <table>
       <tr>

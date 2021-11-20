@@ -42,8 +42,9 @@ function BeneficiosDinheiro() {
   }, [])
 
   return(
-    <section>
-      <h4>Contabilização mais os ganhos em dinheiro(salario liquido com férias e 13 + PLR + Comissões):</h4>
+    <section className="beneficios-dinheiro">
+      <h4>Contabilização mais os ganhos em dinheiro</h4>
+      <h4>(salario liquido com férias e 13 + PLR + Comissões):</h4>
       <table>
       <tr>
           <th>Ganho liquido de salario mais beneficios por hora: </th>

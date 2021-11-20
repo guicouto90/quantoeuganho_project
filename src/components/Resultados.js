@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Context from '../context';
-import '../css/ResultsHours.css'
+import '../css/Resultados.css'
 import Beneficios from './ResultadosComponentes/Beneficios';
 import BeneficiosDinheiro from './ResultadosComponentes/BeneficiosDinheiro';
 import Salario13Ferias from './ResultadosComponentes/Salario13Ferias';
@@ -17,7 +17,7 @@ function Resultados() {
     return '';
   } else {
     return(
-      <section className="container-results-hours">
+      <section className="resultados">
         <h2>Contabilizações</h2>
         <div className="money-container">
           <h4>Ganhos em dinheiro:</h4>
