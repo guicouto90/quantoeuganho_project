@@ -18,10 +18,8 @@ function BotaoQuantoEuGanho({history}) {
     dias,
     setGanhoDia,
     setGanhoHora,
-    setGanhoDiaMes,
     setSalarioAnual,
     disabledButton,
-    setSalarioAno12,
   } = useContext(Context);
 
   const horasDiasGanho = (salario) => {
@@ -29,11 +27,6 @@ function BotaoQuantoEuGanho({history}) {
     setGanhoDia(salarioDia);
     let salarioHora = Math.round((salarioDia/horas) * 100) / 100;
     setGanhoHora(salarioHora);
-    let diaMes = Math.round((salario / 30) * 100) / 100;
-    setGanhoDiaMes(diaMes);
-    let salario12 = Math.round((salario * 12) *100 / 100);
-    salario12 = salario12.toFixed(2);
-    setSalarioAno12(salario12);
     let salarioAno = Math.round((salario * 13.33) * 100) / 100;
     setSalarioAnual(salarioAno);
   };
@@ -45,7 +38,6 @@ function BotaoQuantoEuGanho({history}) {
     if(descInss <= 1903.98) {
       salario = Math.round((descInss * 100) / 100);
       descontoTotal = Math.round((salarioBruto - salario) * 100) / 100;
-      //salario = salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
       setIRRF('Isento');
       setPerIR('Isento');
       setSalarioLiquido(descInss);

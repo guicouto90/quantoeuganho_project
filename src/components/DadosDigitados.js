@@ -13,7 +13,7 @@ function DadosDigitados() {
     convenioOdontologico,
     seguroVida,
     academia,
-    previdencia,
+    outros,
     carro,
     educacao,
     creche,
@@ -68,10 +68,6 @@ function DadosDigitados() {
             <tb>{`R$${academia.toFixed(2)}`}</tb>
           </tr>
           <tr>
-            <th>Contribuição empresa previdência:</th>
-            <tb>{`R$${previdencia.toFixed(2)}`}</tb>
-          </tr>
-          <tr>
             <th>Aluguel de carro pago pela empresa:</th>
             <tb>{`R$${carro.toFixed(2)}`}</tb>
           </tr>
@@ -82,6 +78,10 @@ function DadosDigitados() {
           <tr>
             <th>Auxilio creche:</th>
             <tb>{`R$${creche.toFixed(2)}`}</tb>
+          </tr>
+          <tr>
+            <th>Contribuição empresa previdência:</th>
+            <tb>{`R$${outros.toFixed(2)}`}</tb>
           </tr>
         </table>
       </section>

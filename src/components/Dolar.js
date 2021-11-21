@@ -7,24 +7,21 @@ function Dolar() {
     salarioLiquidoUSD, 
     enableResults, 
     salarioAnualUSD, 
-    ganhoDiaMesUSD, 
     ganhoDiaUSD, 
     ganhoHoraUSD, 
     setGanhoHoraUSD,
     setGanhoDiaUSD,
     setSalarioLiquidoUSD,
     setSalarioAnualUSD,
-    setGanhoDiaMesUSD,
-    ganhoHora,
-    ganhoDia,
-    ganhoDiaMes,
-    salarioLiquido,
-    salarioAnual,
-    currencies,
+    dinheiroHora, 
+    dinheiroDia, 
+    totalDinheiroMes, 
+    totalDinheiroAno,
+    currencies,    
   } = useContext(Context);
 
   useEffect(() => {
-    const salaryInUSD = (hora, dia, mes, ano, diaMes ) => {
+    const salaryInUSD = (hora, dia, mes, ano) => {
       let horaUSD = Math.round((hora / currencies) * 100) / 100;
       setGanhoHoraUSD(horaUSD);
       let diaUSD = Math.round((dia / currencies) * 100) / 100;
@@ -33,11 +30,9 @@ function Dolar() {
       setSalarioLiquidoUSD(mesUSD);
       let anoUSD = Math.round((ano / currencies) * 100) / 100;
       setSalarioAnualUSD(anoUSD);
-      let diaMesUSD = Math.round((diaMes / currencies) * 100) / 100;
-      setGanhoDiaMesUSD(diaMesUSD);
     };
-    salaryInUSD(ganhoHora, ganhoDia, salarioLiquido, salarioAnual, ganhoDiaMes);
-  }, []);
+    salaryInUSD(dinheiroHora, dinheiroDia, totalDinheiroMes, totalDinheiroAno);
+  }, [currencies, dinheiroDia, dinheiroHora, setGanhoDiaUSD, setGanhoHoraUSD, setSalarioAnualUSD, setSalarioLiquidoUSD, totalDinheiroAno, totalDinheiroMes]);
 
   if(enableResults === false) {
     return '';
@@ -45,6 +40,7 @@ function Dolar() {
     return(
       <section className="container-results-worked-hours">
         <h2>Quanto eu ganho em dólar? </h2>
+        <h6>* Calculo baseado somente na remuneração em dinheiro</h6>
         <table>
           <tr>
             <th>Ganho liquido por hora trabalhado em USD:</th>
@@ -57,10 +53,6 @@ function Dolar() {
           <tr>
             <th>Salário liquido por mês em USD: </th>
             <tb>{salarioLiquidoUSD.toFixed(2)} $USD</tb>
-          </tr>
-          <tr>
-            <th>Salário liquido dividido por 30 dias no mês em USD:</th>
-            <tb>{ganhoDiaMesUSD.toFixed(2)} $USD</tb>
           </tr>
           <tr>
             <th>Salário liquido anual com 13 e 1/3 férias em USD: </th>

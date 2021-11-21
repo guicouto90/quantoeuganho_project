@@ -10,11 +10,11 @@ function Tempo() {
 
   return(
     <section>
-      <h2>Tempo de trabalho</h2>
+      <h4>Jornada de trabalho</h4>
       <div id="horas-dia">
         <Inputs
           id={'hours-day'}
-          title={'Digite as horas trabalhadas por dia: '}
+          title={'Horas trabalhadas por dia: '}
           type={'number'}
           setValue={ setHoras }
           maxLength={ 24 }
@@ -23,7 +23,7 @@ function Tempo() {
       <div id="dias-mes">
         <Inputs
           id={'days-month'}
-          title={'Digite os dias trabalhados por mês: '}
+          title={'Dias trabalhados por mês: '}
           type={'number'}
           setValue={ setDias }
           maxLength={ 31 }

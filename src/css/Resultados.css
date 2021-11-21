@@ -1,3 +1,16 @@
 .resultados {
   margin-left: 50px;
+  border: 2px black ;
+}
+
+.beneficios {
+  margin-top: 20px;
+}
+
+.salario-total {
+  margin-top: 10px;
+}
+
+.beneficios-dinheiro {
+  margin-top: 20px;
 }

@@ -15,7 +15,7 @@ function Ganhos() {
     setConvenioOdontologico,
     setSeguroVida,
     setAcademia,
-    setPrevidencia,
+    setOutros,
     setCarro,
     setEducacao,
     setCreche,
@@ -27,7 +27,7 @@ function Ganhos() {
     convenioOdontologico,
     seguroVida,
     academia,
-    previdencia,
+    outros,
     carro,
     educacao,
     creche,
@@ -38,7 +38,7 @@ function Ganhos() {
   useEffect(() => {
     const totalBenefits = () => {
       let totalMes = 0;
-      totalMes = valeAlimentacao + valeCultura + valeRefeicao + valeTransporte + convenioMedico + convenioOdontologico + seguroVida + academia + previdencia + carro + educacao + creche;
+      totalMes = valeAlimentacao + valeCultura + valeRefeicao + valeTransporte + convenioMedico + convenioOdontologico + seguroVida + academia + outros + carro + educacao + creche;
       let totalAno = totalMes * 12;
       if(totalMes > 0 && totalAno > 0) {
         setTotalBeneficiosMes(totalMes);
@@ -46,161 +46,144 @@ function Ganhos() {
       }
     }
     totalBenefits();
-  }, [ valeAlimentacao, valeCultura, valeRefeicao, valeTransporte,convenioMedico, convenioOdontologico, seguroVida, academia, previdencia, carro, educacao,creche,setTotalBeneficiosMes,setTotalBeneficiosAno ]);
-
+  }, [ valeAlimentacao, valeCultura, valeRefeicao, valeTransporte,convenioMedico, convenioOdontologico, seguroVida, academia, outros, carro, educacao,creche,setTotalBeneficiosMes,setTotalBeneficiosAno ]);
   
 
   return(
     <section>
-      <h2>Ganhos mensal</h2>
-      <div id="container-money">
-        <h4>Dinheiro: </h4>
+      <div className="container-dinheiro">
+        <h4>Remuneração em dinheiro: </h4>
         <div id="salario-bruto">       
           <Inputs
             id={"gross-salary"}
-            title={'Digite seu salário bruto: R$'}
+            title={'Salário bruto mensal:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setSalarioBruto }
             required={ true }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="plr">
           <Inputs
             id={"plr"}
-            title={'PLR Anual R$:'}
+            title={'PLR/Bônus anual:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setPlr }
             required={ false }
           />
         </div>
       </div>
+      <h4>Benefícios:</h4>
+      <h6>*Inserir valor mensal</h6>
       <div id="vales">
-        <h4>Vales: </h4>
-        <div id="salario-bruto">
+        <div id="vale-alimentacao">
           <Inputs
             id={"VA"}
-            title={'Vale Alimentação R$:'}
+            title={'Vale Alimentação:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setValeAlimentacao }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="vale-refeicao">
           <Inputs
             id={"VR"}
-            title={'Vale Refeição R$:'}
+            title={'Vale Refeição:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setValeRefeicao }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="vale-cultura">
           <Inputs
             id={"Vale cultura"}
-            title={'Vale Cultura R$:'}
+            title={'Vale Cultura:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setValeCultura }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="vale-transporte">
           <Inputs
             id={"Vale transporte"}
-            title={'Vale transporte e/ou combustível R$:'}
+            title={'Vale transporte e/ou combustível:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setValeTransporte }
             required={ false }
           />
         </div>
       </div>
       <div id="saude">
-        <h4>Beneficios saúde:</h4>
-        <div id="salario-bruto">
+        <div id="convenio-medico">
           <Inputs
             id={"convenio-medico"}
-            title={'Valor do convênio médico R$:'}
+            title={'Convênio médico:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setConvenioMedico }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="convenio-odontologic">
           <Inputs
             id={"convenio-odontologico"}
-            title={'Valor do convênio odontológico R$:'}
+            title={'Convênio odontológico:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setConvenioOdontologico }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="seguro-vida">
           <Inputs
             id={"seguro-vida"}
-            title={'Valor do seguro de vida R$:'}
+            title={'Seguro de vida:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setSeguroVida }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="convenio-academia">
           <Inputs
             id={"convenio-academia"}
-            title={'Valor do convenio com academia R$:'}
+            title={'Auxílio academia:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setAcademia }
             required={ false }
           />
         </div>
       </div>
       <div id="outros">
-        <h4>Outros:</h4>
-        <div id="salario-bruto">
+        <div id="auxilio-creche">
           <Inputs
-            id={"previdencia"}
-            title={'Contribuição voluntária Previdencia R$:'}
+            id={"auxilio-creche"}
+            title={'Auxilio creche:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
-            setValue={ setPrevidencia }
+            setValue={ setCreche }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="carro">
           <Inputs
             id={"carro"}
-            title={'Valor do aluguel do carro pago pela empresa R$:'}
+            title={'Aluguel de carro:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setCarro }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="educacao">
           <Inputs
             id={"educacao"}
-            title={'Valor do incentivo educacional pago pela empresa R$:'}
+            title={'Incentivo educacional:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
             setValue={ setEducacao }
             required={ false }
           />
         </div>
-        <div id="salario-bruto">
+        <div id="outros">
           <Inputs
-            id={"auxilio-creche"}
-            title={'Valor do auxilio creche pago pela empresa R$:'}
+            id={"outros"}
+            title={'Outros benefícios:'}
             type={'number'}
-            placeholder={"Utilize '.'(ponto) para centavos"}
-            setValue={ setCreche }
+            setValue={ setOutros }
             required={ false }
           />
         </div>

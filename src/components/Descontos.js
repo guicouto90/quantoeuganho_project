@@ -10,6 +10,7 @@ function Descontos() {
     INSS, 
     perINSS, 
     salarioLiquido,
+    salarioBruto,
     descontos,
     enableResults,
   } = useContext(Context);
@@ -19,8 +20,11 @@ function Descontos() {
   } else {
     return(
       <section className="container-results-discounts">
-        <h2>Descontos</h2>
         <table>
+        <tr>
+            <th>Salário Bruto:</th>
+            <tb>{`R$${salarioBruto.toFixed(2)}`}</tb>
+          </tr>
           <tr>
             <th>Desconto IRRF:</th>
             <tb>{IRRF === 'Isento' ? IRRF : `R$${IRRF.toFixed(2)}`}</tb>
@@ -42,7 +46,7 @@ function Descontos() {
             <tb>{`R$${ descontos.toFixed(2) }`}</tb>
           </tr>
           <tr>
-            <th>Salário liquido por mês: </th>
+            <th>Salário liquido: </th>
             <tb>{`R$${salarioLiquido.toFixed(2)}`}</tb>
           </tr>
         </table>

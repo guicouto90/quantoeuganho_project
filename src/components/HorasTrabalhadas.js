@@ -5,18 +5,18 @@ import '../css/WorkedHours.css';
 function HorasTrabalhadas() {
   const 
   { 
-    hoursJapones,
-    hoursTanque,
-    hoursCarro,
-    hoursImovel,
-    hoursIphone,
+    japones,
+    tanque,
+    carro,
+    imovel,
+    iphone,
     enableResults,
-    setHoursJapones,
-    setHoursTanque,
-    setHoursIphone,
-    setHoursCarro,
-    setHoursImovel,
-    ganhoHora,
+    setJapones,
+    setTanque,
+    setIphone,
+    setCarro30k,
+    setImovel,
+    dinheiroHora,
   } = useContext(Context);
 
   useEffect(() => {
@@ -25,57 +25,59 @@ function HorasTrabalhadas() {
       let hrasJapones = parseInt(japones);
       let minJapones = Math.round(((japones) - hrasJapones) * 60);
       japones = `${hrasJapones} horas e ${minJapones} min`;
-      setHoursJapones(japones);
+      setJapones(japones);
       let tanque = Math.round((300 / salarioHora) * 100) / 100;
       let hrasTanque = parseInt(tanque);
       let minTanque = Math.round(((tanque) - hrasTanque) * 60);
       tanque = `${hrasTanque} horas e ${minTanque} min`;
-      setHoursTanque(tanque);
+      setTanque(tanque);
       let iphone = Math.round((5300 / salarioHora) * 100) / 100;
       let hrasIphone = parseInt(iphone);
       let minIphone = Math.round(((iphone) - hrasIphone) * 60);
       iphone = `${hrasIphone} horas e ${minIphone} min`;
-      setHoursIphone(iphone);
+      setIphone(iphone);
       let carro = Math.round((30000 / salarioHora) * 100) / 100;
       let hrasCarro = parseInt(carro);
       let minCarro = Math.round(((carro) - hrasCarro) * 60);
       carro = `${hrasCarro} horas e ${minCarro} min`;
-      setHoursCarro(carro);
+      setCarro30k(carro);
       let imovel = Math.round((250000 / salarioHora) * 100) / 100;
       let hrasImovel = parseInt(imovel);
       let minImovel = Math.round(((imovel) - hrasImovel) * 60);
       imovel = `${hrasImovel} horas e ${minImovel} min`;
-      setHoursImovel(imovel);
+      setImovel(imovel);
     };
-    workedHours(ganhoHora);
-  },[]);
+    workedHours(dinheiroHora);
+  },[dinheiroHora, setCarro30k, setImovel, setIphone, setJapones, setTanque]);
   
   if(enableResults === false) {
     return '';
   } else {
     return(
       <section className="container-results-worked-hours">
-        <h2>Quantas horas eu preciso para ... ? </h2>
+        <h2>Tome boas decisões financeiras</h2>
+        <h4>Quantas horas eu preciso trabalhar para ... ? </h4>
+        <h6>* Calculo baseado somente na remuneração em dinheiro</h6>
         <table>
           <tr>
-            <th>Jantar em um restaurante japonês(R$90,00):</th>
-            <tb>{hoursJapones}</tb>
+            <th>Jantar em um restaurante japonês (R$ 90,00):</th>
+            <tb>{japones}</tb>
           </tr>
           <tr>
-            <th>Encher um tanque de gasolina de 50L(R$300,00):</th>
-            <tb>{hoursTanque}</tb>
+            <th>Encher um tanque de gasolina de 50L (R$ 300,00):</th>
+            <tb>{tanque}</tb>
           </tr>
           <tr>
-            <th>iPhone 12 128GB R$5300: </th>
-            <tb>{hoursIphone}</tb>
+            <th>iPhone 12 128GB (R$ 5.300,00): </th>
+            <tb>{iphone}</tb>
           </tr>
           <tr>
-            <th>Carro usado de R$30.000,00:</th>
-            <tb>{hoursCarro}</tb>
+            <th>Carro usado de R$ 30.000,00:</th>
+            <tb>{carro}</tb>
           </tr>
           <tr>
-            <th>Imóvel de R$250.000,00:</th>
-            <tb>{hoursImovel}</tb>
+            <th>Imóvel de R$ 250.000,00:</th>
+            <tb>{imovel}</tb>
           </tr>
         </table>
       </section>
