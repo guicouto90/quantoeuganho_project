@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../css/Inputs.css';
 
 function Inputs({ title, id, type, placeholder, maxLength, required, setValue }) {
 
@@ -16,6 +17,7 @@ function Inputs({ title, id, type, placeholder, maxLength, required, setValue })
         onChange={ handleOnChange }
         maxLength={ maxLength }
         required={ required }
+        className="inputs"
       />
     </label>
   );

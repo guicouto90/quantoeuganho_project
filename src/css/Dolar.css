@@ -1,0 +1,15 @@
+.dolar {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px;
+  width: 600px;
+}
+
+tb {
+  margin-left: 15px;
+}
+
+tb, th {
+  margin-top: 20px;
+}

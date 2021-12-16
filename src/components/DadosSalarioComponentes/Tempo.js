@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../../context';
 import Inputs from './Inputs'
+import '../../css/Ganhos.css';
 
 function Tempo() {
   const {
@@ -9,8 +10,8 @@ function Tempo() {
   } = useContext(Context);
 
   return(
-    <section>
-      <h4>Jornada de trabalho</h4>
+    <section className="tempo-container">
+      <h4>Jornada de trabalho:</h4>
       <div id="horas-dia">
         <Inputs
           id={'hours-day'}

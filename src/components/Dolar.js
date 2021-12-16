@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Context from '../context';
-import '../css/WorkedHours.css';
+import '../css/Dolar.css'
 
 function Dolar() {
   const { 
@@ -38,7 +38,7 @@ function Dolar() {
     return '';
   } else {
     return(
-      <section className="container-results-worked-hours">
+      <section className="dolar">
         <h2>Quanto eu ganho em dólar? </h2>
         <h6>* Calculo baseado somente na remuneração em dinheiro</h6>
         <table>

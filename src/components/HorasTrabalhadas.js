@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import Context from '../context';
-import '../css/WorkedHours.css';
+import '../css/HorasTrabalhadas.css';
 
 function HorasTrabalhadas() {
   const 
   { 
     japones,
     tanque,
-    carro,
+    carro30k,
     imovel,
     iphone,
     enableResults,
@@ -54,17 +54,17 @@ function HorasTrabalhadas() {
     return '';
   } else {
     return(
-      <section className="container-results-worked-hours">
+      <section className="horas-trabalhadas">
         <h2>Tome boas decisões financeiras</h2>
         <h4>Quantas horas eu preciso trabalhar para ... ? </h4>
         <h6>* Calculo baseado somente na remuneração em dinheiro</h6>
         <table>
           <tr>
-            <th>Jantar em um restaurante japonês (R$ 90,00):</th>
+            <th>Rodízio japonês (R$ 90,00):</th>
             <tb>{japones}</tb>
           </tr>
           <tr>
-            <th>Encher um tanque de gasolina de 50L (R$ 300,00):</th>
+            <th>Tanque cheio gasolina (R$ 300,00):</th>
             <tb>{tanque}</tb>
           </tr>
           <tr>
@@ -73,7 +73,7 @@ function HorasTrabalhadas() {
           </tr>
           <tr>
             <th>Carro usado de R$ 30.000,00:</th>
-            <tb>{carro}</tb>
+            <tb>{carro30k}</tb>
           </tr>
           <tr>
             <th>Imóvel de R$ 250.000,00:</th>

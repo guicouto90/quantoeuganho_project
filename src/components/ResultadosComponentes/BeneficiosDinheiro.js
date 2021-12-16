@@ -39,7 +39,8 @@ function BeneficiosDinheiro() {
 
   return(
     <section className="beneficios-dinheiro">
-      <h4>Remuneração líquida em dinheiro + benefícios:</h4>
+      <h4>Remuneração líquida em dinheiro + </h4>
+      <h4>benefícios:</h4>
       <table>
       <tr>
           <th>Anual: </th>

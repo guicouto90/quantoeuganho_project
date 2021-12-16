@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Context from '../context';
-import '../css/ResultsDiscounts.css';
+import '../css/Descontos.css';
 
 function Descontos() {
   const 
@@ -19,7 +19,8 @@ function Descontos() {
     return '';
   } else {
     return(
-      <section className="container-results-discounts">
+      <section className="descontos">
+        <h4>Descontos salário bruto mensal:</h4>
         <table>
         <tr>
             <th>Salário Bruto:</th>

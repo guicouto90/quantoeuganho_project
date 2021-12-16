@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Context from '../context';
-import '../css/DataSalary.css';
+import '../css/DadosSalario.css';
 import Tempo from './DadosSalarioComponentes/Tempo';
 import Ganhos from './DadosSalarioComponentes/Ganhos';
 

@@ -16,9 +16,9 @@ function Resultados() {
   } else {
     return(
       <section className="resultados">
-          <SalarioTotal />
-          <Beneficios />
-          <BeneficiosDinheiro />
+        <SalarioTotal />
+        <Beneficios />
+        <BeneficiosDinheiro />
       </section>
     );
   }
