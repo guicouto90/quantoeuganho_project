@@ -51,7 +51,7 @@ function BotaoQuantoEuGanho({history}) {
       setDescontos(descontoTotal);
       setSalarioLiquido(salario);
       setIRRF(valueIR);
-      setPerIR('7.5%')
+      setPerIR('7,5%')
       horasDiasGanho(salario);
     } else if(descInss >= 2826.66 && descInss <= 3751.05) {
       valueIR = descInss * 0.15 - 354.8;
@@ -71,7 +71,7 @@ function BotaoQuantoEuGanho({history}) {
       setDescontos(descontoTotal);
       setSalarioLiquido(salario);
       setIRRF(valueIR);
-      setPerIR('22.5%');
+      setPerIR('22,5%');
       horasDiasGanho(salario);
     } else if(descInss >= 4664.69) {
       valueIR = descInss * 0.275 - 869.36;
@@ -81,7 +81,7 @@ function BotaoQuantoEuGanho({history}) {
       setDescontos(descontoTotal);
       setSalarioLiquido(salario);
       setIRRF(valueIR);
-      setPerIR('27.5%');
+      setPerIR('27,5%');
       horasDiasGanho(salario);
     }
   };
@@ -95,7 +95,7 @@ function BotaoQuantoEuGanho({history}) {
       descInss = salarioBruto - valueINSS;
       setINSS(valueINSS);
       descontoIRRF(descInss);
-      setPerINSS('7.5%')
+      setPerINSS('7,5%')
     } else if(salarioBruto >= 1100.01 && salarioBruto <= 2203.48) {
       valueINSS = (salarioBruto - 1100) * 0.09 + 82.5;
       valueINSS = Math.round(valueINSS * 100) / 100;

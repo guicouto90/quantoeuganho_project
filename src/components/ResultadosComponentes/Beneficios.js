@@ -11,14 +11,22 @@ function Beneficios() {
     setBeneficiosDias,
     beneficiosHora,
     beneficiosDias,
+    totalBeneficiosMesReal, 
+    setTotalBeneficiosMesReal,
+    totalBeneficiosAnoReal,
+    setTotalBeneficiosAnoReal,
   } = useContext(Context);
 
   useEffect(() => {
     const results = () => {
       let beneDias = Math.round((totalBeneficiosMes / dias) * 100 / 100);
       let beneHoras = Math.round((beneDias / horas) * 100 / 100);
-      setBeneficiosHora(beneHoras);
-      setBeneficiosDias(beneDias);
+      let beneAno = totalBeneficiosAno;
+      let beneMes = totalBeneficiosMes;
+      setBeneficiosHora(beneHoras.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setBeneficiosDias(beneDias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setTotalBeneficiosAnoReal(beneAno.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setTotalBeneficiosMesReal(beneMes.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
     };
     results();
   }, [dias, horas, setBeneficiosDias, setBeneficiosHora, totalBeneficiosMes])
@@ -29,19 +37,19 @@ function Beneficios() {
       <table>
       <tr>
           <th>Anual: </th>
-          <tb>{`R$ ${totalBeneficiosAno.toFixed(2)} por ano`}</tb>
+          <tb>{`${totalBeneficiosAnoReal} por ano`}</tb>
         </tr>
         <tr>
           <th>Mensal: </th>
-          <tb>{`R$ ${totalBeneficiosMes.toFixed(2)} por mês`}</tb>
+          <tb>{`${totalBeneficiosMesReal} por mês`}</tb>
         </tr>
         <tr>
           <th>Por dia trabalhado: </th>
-          <tb>{`R$ ${beneficiosDias.toFixed(2)} por dia`}</tb>
+          <tb>{`${beneficiosDias} por dia`}</tb>
         </tr>
         <tr>
           <th>Por hora trabalhada: </th>
-          <tb>{`R$ ${beneficiosHora.toFixed(2)} por hora`}</tb>
+          <tb>{`${beneficiosHora} por hora`}</tb>
         </tr>
       </table>
     </section>

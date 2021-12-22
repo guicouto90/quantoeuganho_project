@@ -24,11 +24,11 @@ function Descontos() {
         <table>
         <tr>
             <th>Salário Bruto:</th>
-            <tb>{`R$${salarioBruto.toFixed(2)}`}</tb>
+            <tb>{`${salarioBruto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`}</tb>
           </tr>
           <tr>
             <th>Desconto IRRF:</th>
-            <tb>{IRRF === 'Isento' ? IRRF : `R$${IRRF.toFixed(2)}`}</tb>
+            <tb>{IRRF === 'Isento' ? IRRF : `${IRRF.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`}</tb>
           </tr>
           <tr>
             <th>Aliquota IRRF:</th>
@@ -36,7 +36,7 @@ function Descontos() {
           </tr>
           <tr>
             <th>Desconto INSS: </th>
-            <tb>{`R$${INSS.toFixed(2)}`}</tb>
+            <tb>{`${INSS.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`}</tb>
           </tr>
           <tr>
             <th>Alíquota INSS:</th>
@@ -44,11 +44,11 @@ function Descontos() {
           </tr>
           <tr>
             <th>Total de descontos:</th>
-            <tb>{`R$${ descontos.toFixed(2) }`}</tb>
+            <tb>{`${ descontos.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }`}</tb>
           </tr>
           <tr>
             <th>Salário liquido: </th>
-            <tb>{`R$${salarioLiquido.toFixed(2)}`}</tb>
+            <tb>{`${salarioLiquido.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`}</tb>
           </tr>
         </table>
       </section>

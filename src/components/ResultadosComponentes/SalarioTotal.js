@@ -3,10 +3,6 @@ import Context from '../../context';
 
 function SalarioTotal() {
   const {
-    dinheiroHora,
-    dinheiroDia,
-    totalDinheiroMes,
-    totalDinheiroAno,
     salarioAnual,
     dias,
     horas,
@@ -15,6 +11,14 @@ function SalarioTotal() {
     setTotalDinheiroMes,
     setDinheiroHora,
     setDinheiroDia,
+    totalDinheiroAnoReal, 
+    setTotalDinheiroAnoReal,
+    totalDinheiroMesReal, 
+    setTotalDinheiroMesReal,
+    totalDinheiroHoraReal, 
+    setTotalDinheiroHoraReal,
+    totalDinheiroDiaReal, 
+    setTotalDinheiroDiaReal,
   } = useContext(Context);
 
   useEffect(() => {
@@ -27,9 +31,27 @@ function SalarioTotal() {
       setTotalDinheiroMes(totalMesDin);
       setDinheiroHora(totalHoraDin);
       setDinheiroDia(totalDiaDin);
+      //Fonte conversao: https://www.horadecodar.com.br/2020/09/01/formatar-moeda-brasileira-em-javascript-float-para-real/
+      setTotalDinheiroAnoReal(totalDinheiro.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setTotalDinheiroMesReal(totalMesDin.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setTotalDinheiroHoraReal(totalHoraDin.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+      setTotalDinheiroDiaReal(totalDiaDin.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
     };
     results();
-  }, [dias, horas, plr, salarioAnual, setDinheiroDia, setDinheiroHora, setTotalDinheiroAno, setTotalDinheiroMes]);
+  }, [dias, horas, plr, 
+    salarioAnual, 
+    setDinheiroDia, 
+    setDinheiroHora, 
+    setTotalDinheiroAno, 
+    setTotalDinheiroMes,
+    totalDinheiroAnoReal,
+    setTotalDinheiroAnoReal,
+    totalDinheiroMesReal, 
+    setTotalDinheiroMesReal,
+    totalDinheiroHoraReal, 
+    setTotalDinheiroHoraReal,
+    totalDinheiroDiaReal, 
+    setTotalDinheiroDiaReal]);
 
   return(
     <section className="salario-total">
@@ -38,19 +60,19 @@ function SalarioTotal() {
       <table>
       <tr>
           <th>Anual: </th>
-          <tb>{`R$ ${ totalDinheiroAno.toFixed(2) } por ano`}</tb>
+          <tb>{` ${ totalDinheiroAnoReal } por ano`}</tb>
         </tr>
        <tr>
           <th>Mensal:</th>
-          <tb>{`R$ ${ totalDinheiroMes.toFixed(2) } por mês`}</tb>
+          <tb>{` ${ totalDinheiroMesReal } por mês`}</tb>
         </tr>
         <tr>
           <th>Por dia trabalhado:</th>
-          <tb>{`R$ ${dinheiroDia.toFixed(2)} por dia`}</tb>
+          <tb>{` ${totalDinheiroDiaReal} por dia`}</tb>
         </tr>
         <tr>
           <th>Por hora trabalhada:</th>
-          <tb>{`R$ ${dinheiroHora.toFixed(2)} por hora`}</tb>
+          <tb>{` ${totalDinheiroHoraReal} por hora`}</tb>
         </tr>
       </table>
     </section>

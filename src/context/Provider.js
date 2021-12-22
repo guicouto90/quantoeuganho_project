@@ -73,15 +73,22 @@ function Provider({ children }) {
   const [beneficiosDias, setBeneficiosDias] = useState(0);
   const [totalBeneficiosMes, setTotalBeneficiosMes] = useState(0);
   const [totalBeneficiosAno, setTotalBeneficiosAno] = useState(0);
-  
 
   //TOTAL DE TUDO
   const [totalGanhosMes, setTotalGanhosMes] = useState(0);
   const [totalGanhosAno, setTotalGanhosAno] = useState(0);
   const [totalHora, setTotalHora] = useState(0);
   const [totalDia, setTotalDia] = useState(0);
-  
 
+  //RESULTADOS NA TELA
+  //Beneficios
+  const [totalBeneficiosMesReal, setTotalBeneficiosMesReal] = useState(0);
+  const [totalBeneficiosAnoReal, setTotalBeneficiosAnoReal] = useState(0);
+  //SalarioTotal
+  const [totalDinheiroAnoReal, setTotalDinheiroAnoReal] = useState(0);
+  const [totalDinheiroMesReal, setTotalDinheiroMesReal] = useState(0);
+  const [totalDinheiroHoraReal, setTotalDinheiroHoraReal] = useState(0);
+  const [totalDinheiroDiaReal, setTotalDinheiroDiaReal] = useState(0);
 
   useEffect(() => {
     const getCurrencies = async () => {
@@ -206,6 +213,20 @@ function Provider({ children }) {
     setBeneficiosDias,
     beneficiosHora,
     beneficiosDias,
+
+
+    totalBeneficiosMesReal, 
+    setTotalBeneficiosMesReal,
+    totalBeneficiosAnoReal,
+    setTotalBeneficiosAnoReal,
+    totalDinheiroAnoReal, 
+    setTotalDinheiroAnoReal,
+    totalDinheiroMesReal, 
+    setTotalDinheiroMesReal,
+    totalDinheiroHoraReal, 
+    setTotalDinheiroHoraReal,
+    totalDinheiroDiaReal, 
+    setTotalDinheiroDiaReal,
   };
 
   return(

@@ -29,10 +29,10 @@ function BeneficiosDinheiro() {
         let totalHora = Math.round((totalDia / horas) * 100 / 100);
         
         //SetStates
-        setTotalGanhosAno(total);
-        setTotalGanhosMes(totalMes);
-        setTotalHora(totalHora);
-        setTotalDia(totalDia);
+        setTotalGanhosAno(total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+        setTotalGanhosMes(totalMes.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+        setTotalHora(totalHora.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+        setTotalDia(totalDia.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
     };
     results();
   }, [dias, horas, plr, salarioAnual, setTotalDia, setTotalGanhosAno, setTotalGanhosMes, setTotalHora, totalBeneficiosAno]);
@@ -44,19 +44,19 @@ function BeneficiosDinheiro() {
       <table>
       <tr>
           <th>Anual: </th>
-          <tb>{`R$ ${totalGanhosAno.toFixed(2)} por ano`}</tb>
+          <tb>{`${totalGanhosAno} por ano`}</tb>
         </tr>
         <tr>
           <th>Mensal: </th>
-          <tb>{`R$ ${totalGanhosMes.toFixed(2)} por mês`}</tb>
+          <tb>{`${totalGanhosMes} por mês`}</tb>
         </tr>
         <tr>
           <th>Por dia trabalhado: </th>
-          <tb>{`R$ ${totalDia.toFixed(2)} por dia`}</tb>
+          <tb>{`${totalDia} por dia`}</tb>
         </tr>
         <tr>
           <th>Por hora trabalhada: </th>
-          <tb>{`R$ ${totalHora.toFixed(2)} por hora`}</tb>
+          <tb>{`${totalHora} por hora`}</tb>
         </tr>
       </table>
     </section>
