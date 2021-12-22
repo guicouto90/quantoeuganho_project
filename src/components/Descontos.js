@@ -22,7 +22,7 @@ function Descontos() {
       <section className="descontos">
         <h4>Descontos salário bruto mensal:</h4>
         <table>
-        <tr>
+          <tr>
             <th>Salário Bruto:</th>
             <tb>{`${salarioBruto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`}</tb>
           </tr>

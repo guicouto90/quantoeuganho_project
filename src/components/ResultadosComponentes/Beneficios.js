@@ -29,7 +29,7 @@ function Beneficios() {
       setTotalBeneficiosMesReal(beneMes.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
     };
     results();
-  }, [dias, horas, setBeneficiosDias, setBeneficiosHora, totalBeneficiosMes])
+  }, [dias, horas, setBeneficiosDias, setBeneficiosHora, totalBeneficiosMes, setTotalBeneficiosMesReal, setTotalBeneficiosAnoReal, totalBeneficiosAno]);
 
   return(
     <section className="beneficios">
