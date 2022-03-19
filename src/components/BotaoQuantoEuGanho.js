@@ -89,45 +89,45 @@ function BotaoQuantoEuGanho({history}) {
   const descontoINSS = () => {
     let valueINSS = 0;
     let descInss = 0;
-    if(salarioBruto <= 1100) {
+    if(salarioBruto <= 1212) {
       valueINSS = salarioBruto * 0.075;
       valueINSS = Math.round(valueINSS * 100) / 100;
       descInss = salarioBruto - valueINSS;
       setINSS(valueINSS);
       descontoIRRF(descInss);
       setPerINSS('7,5%')
-    } else if(salarioBruto >= 1100.01 && salarioBruto <= 2203.48) {
-      valueINSS = (salarioBruto - 1100) * 0.09 + 82.5;
+    } else if(salarioBruto >= 1212.01 && salarioBruto <= 2427.35) {
+      valueINSS = (salarioBruto - 1212) * 0.09 + 90.9;
       valueINSS = Math.round(valueINSS * 100) / 100;
       setINSS(valueINSS);
       descInss = salarioBruto - valueINSS;
       descontoIRRF(descInss);
       setPerINSS('9%')
-    } else if(salarioBruto >= 2203.49 && salarioBruto <= 3305.22) {
-      valueINSS = (salarioBruto - 2203.48) * 0.12 + 181.81;
+    } else if(salarioBruto >= 2427.36 && salarioBruto <= 3641.03) {
+      valueINSS = (salarioBruto - 2427.35) * 0.12 + 200.28;
       valueINSS = Math.round(valueINSS * 100) / 100;
       setINSS(valueINSS);
       descInss = salarioBruto - valueINSS;
       descontoIRRF(descInss);
       setPerINSS('12%')
-    } else if(salarioBruto >= 3305.23 && salarioBruto <= 6433.57) {
+    } else if(salarioBruto >= 3641.04 && salarioBruto <= 7087.22) {
       setPerINSS('14%')
-      valueINSS = (salarioBruto - 3305.22) * 0.14 + 314.01;
+      valueINSS = (salarioBruto - 3641.03) * 0.14 + 345.92;
       valueINSS = Math.round(valueINSS * 100) / 100;
       descInss = salarioBruto - valueINSS;
       descontoIRRF(descInss);
-      if(valueINSS > 751.99) {
-        valueINSS = 751.99
+      if(valueINSS > 828.39) {
+        valueINSS = 828.39
         descInss = salarioBruto - valueINSS;
         descontoIRRF(descInss);
         setPerINSS('TETO')
       }
       setINSS(valueINSS);
     } else {
-      valueINSS = 751.99
+      valueINSS = 828.39
       descInss = salarioBruto - valueINSS;
       descontoIRRF(descInss);
-      setINSS(751.99);
+      setINSS(828.39);
       setPerINSS('TETO');
     }
   };
